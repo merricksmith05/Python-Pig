@@ -16,6 +16,7 @@ class Game:
     
     def roll_dice(self, player):
         player.roll_again = True
+        print("Rolling for {}...".format(player))
         dice1 = random.randint(1,6)
         dice2 = random.randint(1,6)
         if dice1 == dice2:
@@ -32,6 +33,11 @@ class Game:
             if roll_request == "n":
                 player.roll_again = False
                 return
+    
+    def player_turn(self, player):
+        player.roll_again = True
+        while (player.player_score <= self.winning_score and player.roll_again == True):
+            self.roll_dice(player)
 
    
 
