@@ -1,4 +1,4 @@
-from game_class import *
+from game_class import Game, Player
 
 game = Game()
 #game.roll_dice(game.players_list[0])
