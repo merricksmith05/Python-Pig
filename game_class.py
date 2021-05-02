@@ -38,6 +38,16 @@ class Game:
         player.roll_again = True
         while (player.player_score <= self.winning_score and player.roll_again == True):
             self.roll_dice(player)
+        
+    
+    def run_game(self):
+        winner = None
+        while winner == None:
+            for player in self.players_list:
+                self.player_turn(player)
+                if player.player_score >= self.winning_score:
+                    winner = player
+                    print("{} is the winner!!!!!!!".format(player))
 
    
 
