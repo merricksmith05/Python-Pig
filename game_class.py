@@ -1,9 +1,9 @@
 import random
 
 class Game:
-    player_count = 0
+    
     players_list = []
-    winning_score = 0
+    
     def __init__(self):
         self.player_count = int(input("How many players? "))
         for num in range(self.player_count):
