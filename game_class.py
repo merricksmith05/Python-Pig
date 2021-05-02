@@ -52,6 +52,7 @@ class Game:
                 if player.player_score >= self.winning_score:
                     winner = player
                     print("{} is the winner!!!!!!!".format(player))
+                    return
 
    
 
