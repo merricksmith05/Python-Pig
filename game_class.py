@@ -1,9 +1,7 @@
 import random
 
 class Game:
-    
     players_list = []
-    
     def __init__(self):
         self.player_count = int(input("How many players? "))
         for num in range(self.player_count):
