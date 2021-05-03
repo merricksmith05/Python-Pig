@@ -13,6 +13,7 @@ class Game:
     
     def roll_dice(self, player):
         player.roll_again = True
+        input("Press enter to roll for {}: ".format(player))
         print("Rolling for {}...".format(player))
         dice1 = random.randint(1,6)
         dice2 = random.randint(1,6)
@@ -27,7 +28,7 @@ class Game:
             player.player_score += score
             self.score_dict[player] += score
             print("Noice! You rolled a {}. {}'s score is now {}.".format(score, player, player.player_score))
-            if player.player_score <= self.winning_score:
+            if player.player_score < self.winning_score:
                 roll_request = input("Do you want to roll again (y / n)?")
                 if roll_request == "n":
                     player.roll_again = False
@@ -37,7 +38,7 @@ class Game:
     
     def player_turn(self, player):
         player.roll_again = True
-        while (player.player_score <= self.winning_score and player.roll_again == True):
+        while (player.player_score < self.winning_score and player.roll_again == True):
             self.roll_dice(player)
         print("Score update: {}".format(self.score_dict))
         
