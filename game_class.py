@@ -3,7 +3,18 @@ import random
 class Game:
     players_list = []
     def __init__(self):
-        self.player_count = int(input("How many players? "))
+        self.player_count = 0
+        def get_player_count(self):
+            try:
+                self.player_count = int(input("How many players? "))
+            except:
+                print("Please enter a valid integer")
+                get_player_count(self)
+            finally:
+                if self.player_count < 1:
+                    print("We need at least one player!")
+                    get_player_count(self)
+        get_player_count(self)
         for num in range(self.player_count):
             #this calls the constructor for Player and adds each instance to the players_list
             self.players_list.append(Player(input("Please enter a name for Player{}: ".format(num+1))))
