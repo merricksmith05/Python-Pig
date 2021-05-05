@@ -1,7 +1,7 @@
 import random
 
 class Game:
-    players_list = []
+    players_list = [] #implement as circularly linked list?
     def __init__(self):
         self.player_count = 0
         def get_player_count(self):
